@@ -20,8 +20,8 @@ jobs:
       - name: Deploy to Firebase
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NEXAMP_APP }}' > service_account.json && GOOGLE_APPLICATION_CREDENTIALS=service_account.json ./node_modules/firebase-tools/lib/bin/firebase.js deploy --project nexamp-app --only hosting:nexamp-app && rm -rf service_account.json
       - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NEXAMP_APP }}'
-          channelId: live
-          projectId: nexamp-app
+        # with:
+        #   repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        #   firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NEXAMP_APP }}'
+        #   channelId: live
+        #   projectId: nexamp-app
